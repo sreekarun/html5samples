@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
         <title>
-            
+            HTML5 Semantics Example
         </title>
     </head>
     <body>
@@ -21,12 +22,26 @@
                 </nav>
             </header>
             
-            <article>
-                <section>
+            <section>
+                <article>
                     <header></header> <!-- A section can have its own set of headers -->
+                    <section>
+                        <figure>
+                            <img src="someImageURI.png" alt="Alternate text" />
+                            <figcaption>Caption for the above figure</figcaption>
+                        </figure>
+                        <address>
+                            This should contain the address.
+                        </address>
+                        <div>
+                            <p>Something content <bdi>Some content which needs an alternate direction</bdi> <!-- bdi tag is only supported in FF and Chrome currently --> normal text continues</p>
+                            <p>To override the direction one can make use of 'bdo' tag like this <bdo dir="rtl">this will change direction</bdo> and change the text direction with the help of 'dir' attribute</p>
+                        </div>
+                    </section>
                     <footer></footer> <!-- A section can have its own set of footers -->
-                </section>
-            </article>
+                </article>
+            </section>
+            <aside>this contains the content which really doesn't belong to the page or related to the page itself like for example advertisements, news headlines, weather forecast etc.</aside>
             <footer>
                 <ul>
                     <li>
