@@ -9,3 +9,5 @@ html5 Samples
     audio
     video
     canvas
+3. Manifest for Offline Application
+    Note: Created the app structure and manifest file due to some reason it's not behaving as expected, I'm digging into it.
