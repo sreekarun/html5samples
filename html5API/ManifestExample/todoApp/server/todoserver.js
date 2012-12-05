@@ -22,7 +22,7 @@ app.get('/todoapp.manifest', function (req, res) {
     });
 });
 
-app.use('/css', express.static('../client/css'));
-app.use('/js', express.static('../client/js'));
+app.use('/css', express.static('../client/css')); //servers static files
+app.use('/js', express.static('../client/js')); //servers static files
 
 app.listen(2000, 'localhost');
