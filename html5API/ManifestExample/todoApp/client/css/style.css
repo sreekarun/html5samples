@@ -1,0 +1,33 @@
+* {margin: 0; padding: 0;}
+body {
+    font-size: 62.5%;
+    font-family: Arial;
+}
+#wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+form {
+    margin: 10px 0;
+}
+fieldset {
+    border: 0;
+}
+fieldset legend {
+    display: none;
+}
+form fieldset input {
+    font-size: 1.7em;
+    height: 34px;
+    width: 100%;
+}
+ul li {
+    font-size: 1.5em;
+}
+input[type=checkbox] {
+    vertical-align: sub;
+    display: none;
+}
+ul li:hover input[type=checkbox] {
+    display: inline-block;
+}

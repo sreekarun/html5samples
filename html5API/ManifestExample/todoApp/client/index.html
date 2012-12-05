@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html manifest="todoapp.manifest">
+    <head>
+        <meta charset="utf-8" />
+        <title>TODO</title>
+        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>TODO List</h1>
+            <form id="addTaskForm" name="addTask" action="." method="post">
+                <fieldset>
+                    <legend>Add Task</legend>
+                    <dl>
+                        <dt><input id="addTaskField" type="text" placeholder="Add Task" /></dt>
+                    </dl>
+                </fieldset>
+            </form>
+            <ul id="taskList">
+                <li><input type="checkbox" name="firstTask" value="First Task" /> First Task</li>
+                <li><input type="text" name="editBox" value="Old Task Title" /></li>
+            </ul>
+        </div>
+        
+        <script type="text/javascript" src="/js/base.js"></script>
+        <script type="text/javascript" src="/js/model/TODOModel.js"></script>
+        <script type="text/javascript" src="/js/view/TODOView.js"></script>
+        <script type="text/javascript" src="/js/controller/TODOController.js"></script>
+        <script type="text/javascript" src="/js/boot.js"></script>
+    </body>
+</html>
