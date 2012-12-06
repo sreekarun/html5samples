@@ -18,7 +18,7 @@ app.get('/todoapp.manifest', function (req, res) {
           return res.end('Error loading todoapp.manifest');
         }
         res.setHeader('Content-Type', 'text/cache-manifest');
-        res.end("CACHE MANIFEST");
+        res.end(data);
     });
 });
 
