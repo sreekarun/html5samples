@@ -2,10 +2,10 @@ CACHE MANIFEST
 
 index.html
 
-css/style.css
+/css/style.css
 
-js/base.js
-js/model/TODOModel.js
-js/view/TODOView.js
-js/controller/TODOController.js
-js/boot.js
+/js/base.js
+/js/model/TODOModel.js
+/js/view/TODOView.js
+/js/controller/TODOController.js
+/js/boot.js
