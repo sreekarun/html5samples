@@ -24,6 +24,9 @@ form fieldset input {
 ul li {
     font-size: 1.5em;
 }
+ul li.done {
+    text-decoration: line-through;
+}
 input[type=checkbox] {
     vertical-align: sub;
     display: none;

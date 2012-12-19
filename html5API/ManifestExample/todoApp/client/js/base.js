@@ -3,6 +3,11 @@
  */
 var TODO = {};
 
+/**
+ * Define all the base methods in 'Base' namespace
+ */
+var Base = {};
+
 /* Simple JavaScript Inheritance
  * By John Resig http://ejohn.org/
  * MIT Licensed.
@@ -66,9 +71,29 @@ var TODO = {};
 })();
 
 /**
+ * Utilities
+ */
+Base.Utilities = Class.extend({
+    debug: true,
+    
+    isString: function (val) {
+        return Object.prototype.toString.call(val) === "[object String]";
+    },
+    log: function () {
+        if (Base.Utilities.prototype.debug) {
+            if (this.debug) {
+                if (window.console && window.console.log && window.console.log.apply) {
+                    window.console.log.apply(console, arguments);
+                }
+            }
+        }
+    }
+});
+
+/**
  * Observable base class to add observers
  */
-var Observable = Class.extend({
+var Observable = Base.Utilities.extend({
     on: function (listenerName, listener) {
         if (!this.listenerList) {
             this.listenerList = {};
@@ -92,33 +117,27 @@ var Observable = Class.extend({
     }
 });
 
-
-/**
- * Define all the base methods in 'Base' namespace
- */
-var Base = {};
-
 /**
  * All the Model must inherit from Base.Model
  */
 Base.Model = Observable.extend({
     url: '',
     init: function () {
-        console.log('super initiated');
+        this.log('super initiated');
     },
     so: function () {
-        console.log('asfd');
+        this.log('asfd');
     },
     __get: function () {
         if (!url) {
             return;
         }
         
-        console.log('get data from', url);
+        this.log('get data from', url);
         this.fire('get');
     },
     __update: function () {
-        console.log('update data');
+        this.log('update data');
         this.fire('update');
     }
 });
@@ -126,7 +145,7 @@ Base.Model = Observable.extend({
 /**
  * All the View must inherit from Base.View
  */
-Base.View = Class.extend({
+Base.View = Base.Utilities.extend({
     init: function () {
         //console.log('base View creation');
     }
@@ -135,7 +154,7 @@ Base.View = Class.extend({
 /**
  * All the Controller must inherit from Base.Controller
  */
-Base.Controller = Class.extend({
+Base.Controller = Base.Utilities.extend({
     init: function () {
         //console.log('base Controller creation');
     }

@@ -12,7 +12,6 @@ app.get('/index.html', function (req, res) {
 });
 
 app.get('/todoapp.manifest', function (req, res) {
-    console.log('manifest');
     fs.readFile('../client/todoapp.manifest', function (err, data) {
         if (err) {
           return res.end('Error loading todoapp.manifest');

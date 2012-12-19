@@ -6,16 +6,16 @@
             todoView = new TODO.View();
             
             todoModel.on('update', function () {
-                console.log('updating');
+                this.log('updating');
             });
             todoModel.update();
             
             var model = new TODO.Model();
             model.on('update', function () {
-                console.log('updating...');
+                this.log('updating...');
             });
              model.on('update', function () {
-                console.log('2 updating...');
+                this.log('2 updating...');
             });
             model.update();
     }, false);
