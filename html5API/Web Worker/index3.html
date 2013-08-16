@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            HTML5 Web Worker Example
+        </title>
+    </head>
+    <body>
+        <div class="example">
+            <button onclick="sayHI()">Say HI</button>
+            <button onclick="unknownCmd()">Send unknown command</button>
+            <button onclick="stop()">Stop worker</button>
+            <output id="result"></output>
+        </div>
+
+        <script>
+
+        var worker = new Worker('doWork3.js');
+
+          function sayHI() {
+            worker.postMessage({'cmd': 'start', 'msg': 'Hi'});
+          }
+
+          function stop() {
+            // worker.terminate() from this script would also stop the worker.
+            worker.postMessage({'cmd': 'stop', 'msg': 'Bye'});
+          }
+
+          function unknownCmd() {
+            worker.postMessage({'cmd': 'foobard', 'msg': '???'});
+          }
+
+          worker.onmessage = function(e) {
+            document.getElementById('result').textContent = e.data;
+          }
+
+        </script>
+
+    </body>
+</html>

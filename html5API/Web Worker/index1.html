@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            HTML5 Web Worker Example
+        </title>
+    </head>
+    <body>
+        <div class="example">
+            <button onclick="testWorker()">Test Worker</button>
+            <output id="result"></output>
+        </div>
+
+        <script>
+
+        var worker = new Worker('doWork1.js');
+
+          function testWorker() {
+            worker.postMessage({'msg': 'Hi'});
+          }
+
+          worker.addEventListener('message', function(e) {
+            document.getElementById('result').textContent = e.data;
+          }, false);
+        </script>
+
+    </body>
+</html>
